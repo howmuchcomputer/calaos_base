@@ -406,6 +406,7 @@ bool ListeRoom::deleteIO(Input *input, bool modify)
             || input->get_param("gui_type") == "analog_in"
             || input->get_param("gui_type") == "time_range"
             || input->get_param("gui_type") == "timer")
+
             ListeRule::Instance().Remove(input);
 
         if (input->get_param("gui_type") == "timer")

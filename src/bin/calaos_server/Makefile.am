@@ -10,6 +10,7 @@ AM_CPPFLAGS =                                                 \
         -DTIXML_USE_STL                                       \
         -I$(top_srcdir)/src/bin/calaos_server/Audio           \
         -I$(top_srcdir)/src/bin/calaos_server/IO/Gpio         \
+        -I$(top_srcdir)/src/bin/calaos_server/IO/Mqtt         \
         -I$(top_srcdir)/src/bin/calaos_server/IO/OneWire      \
         -I$(top_srcdir)/src/bin/calaos_server/IO/Scripts      \
         -I$(top_srcdir)/src/bin/calaos_server/IO/Wago/libmbus \
@@ -31,7 +32,8 @@ AM_CPPFLAGS =                                                 \
         -I$(top_srcdir)/src/lib/libquickmail                  \
         -I$(top_srcdir)/src/lib/uri_parser                    \
         @CALAOS_COMMON_CFLAGS@                                \
-        @CALAOS_SERVER_CFLAGS@
+        @CALAOS_SERVER_CFLAGS@                                \
+        @EMQTT_CFLAGS@
 
 bin_PROGRAMS = calaos_server
 
@@ -107,6 +109,12 @@ calaos_server_SOURCES = \
         IO/InputTimer.h                                 \
         IO/IntValue.cpp                                 \
         IO/IntValue.h                                   \
+        IO/Mqtt/MqttMap.c                               \
+        IO/Mqtt/MqttMap.h                               \
+        IO/Mqtt/MqttInputTemp.c                         \
+        IO/Mqtt/MqttInputTemp.h                         \
+        IO/Mqtt/MqttOutputLogic.c                       \
+        IO/Mqtt/MqttOutputLogic.h                       \
         IO/OneWire/OWCtrl.cpp                           \
         IO/OneWire/OWCtrl.h                             \
         IO/OneWire/OWTemp.cpp                           \
@@ -266,4 +274,5 @@ calaos_server_SOURCES = \
 
 calaos_server_LDADD =                                   \
         @CALAOS_SERVER_LIBS@                            \
-        $(top_builddir)/src/lib/libcalaos_common.la
+        $(top_builddir)/src/lib/libcalaos_common.la     \
+        @EMQTT_LIBS@

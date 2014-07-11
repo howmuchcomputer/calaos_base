@@ -148,7 +148,6 @@ AC_HEADER_ASSERT
 AC_CHECK_HEADERS([unistd.h])
 
 have_owcapi="no"
-
 AC_CHECK_HEADERS([owcapi.h], [have_owcapi="yes"])
 AM_CONDITIONAL([HAVE_OWCAPI], [test "x${have_owcapi}" = "xyes"])
 if test "x${have_owcapi}" == "xyes"
@@ -172,6 +171,13 @@ then
      AC_DEFINE([HAVE_ECORE_X], [1], [ecore_x])
 fi
 
+have_emqtt="no"
+PKG_CHECK_MODULES([EMQTT], [emqtt], [have_emqtt="yes"], [have_emqtt="no"])
+AM_CONDITIONAL([HAVE_EMQTT], [test "x${have_emqtt}" = "xyes"])
+if test "x${have_emqtt}" == "xyes"
+then 
+     AC_DEFINE([HAVE_EMQTT], [1], [emqtt])
+fi
 
 AC_CONFIG_FILES([
 Makefile
@@ -222,4 +228,5 @@ echo
 echo " One Wire support......: ${have_owcapi}"
 echo " EWebkit support.......: ${have_ewebkit}"
 echo " Ecore_X support.......: ${have_ecore_x}"
+echo " EMQTT support.........: ${have_emqtt}"
 echo

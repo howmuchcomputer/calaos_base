@@ -39,6 +39,9 @@
 #include <Zibase.h>
 #include <Prefix.h>
 
+#include <EMqtt.h>
+#include <MqttInputTemp.h>
+
 #ifdef HAVE_BREAKPAD
 #include "client/linux/handler/exception_handler.h"
 #endif
@@ -150,6 +153,10 @@ int main (int argc, char **argv)
         //Start main UDP communication server
         udpserver = new UDPServer(BCAST_UDP_PORT);
     }
+
+    //MQTT broker
+    emqtt_init();
+    emqtt_sn_server_add("::", 1883, 1);
 
     //Start main TCP server for network commands
     TCPServer::Instance(TCP_LISTEN_PORT);
