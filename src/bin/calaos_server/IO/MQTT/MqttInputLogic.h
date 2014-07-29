@@ -1,6 +1,6 @@
 /******************************************************************************
-**  Copyright (c) 2007-2014, Calaos. All Rights Reserved.
-**
+ **  Copyright (c) 2007-2014, Calaos. All Rights Reserved.
+ **
 **  This file is part of Calaos.
 **
 **  Calaos is free software; you can redistribute it and/or modify
@@ -18,32 +18,37 @@
 **  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 **
 ******************************************************************************/
-#ifndef S_MqttOutputLogic_H
-#define S_MqttOutputLogic_H
+#ifndef S_MqttInputLogic_H
+#define S_MqttInputLogic_H
 
-#include "OutputLight.h"
+#include <InputSwitch.h>
 #include "Params.h"
 #include <MqttMap.h>
 
 namespace Calaos
 {
 
-class MqttOutputLogic : public OutputLight
+class MqttInputLogic : public InputSwitch
 {
 private:
      std::string host;
      int port;
+     sigc::connection connection;
+     sigc::signal<void> event_signal;
 
 protected:
      EMqtt_Sn_Client* client;
      string topic;
 
 public:
-     MqttOutputLogic(Params &p);
-     ~MqttOutputLogic();
+     MqttInputLogic(Params &p);
+     ~MqttInputLogic();
 
-     bool connected;
-     bool set_value_real(bool val);
+     virtual bool readValue();
+     void setValue(double val);
+     void connected();
+     bool setValueChanged(sigc::slot<void> slot);
+     void emitChange(string val);
 };
 
 }
