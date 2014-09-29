@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: calaos 2.0\n"
 "Report-Msgid-Bugs-To: http://calaos.fr\n"
-"POT-Creation-Date: 2014-09-12 16:38+0200\n"
+"POT-Creation-Date: 2014-09-29 16:35+0200\n"
 "PO-Revision-Date: 2014-03-11 22:27+0900\n"
 "Last-Translator: Sanjeev <iamsanjeev@gmail.com>\n"
 "Language-Team: Hindi\n"
@@ -54,29 +54,29 @@ msgstr " केवल application को पुनः आरंभ "
 msgid "Reboot machine"
 msgstr " मशीन पुनः आरंभ कर दें"
 
-#: src/bin/calaos_home/main.cpp:43 src/bin/calaos_server/main.cpp:62
+#: src/bin/calaos_home/main.cpp:43 src/bin/calaos_server/main.cpp:65
 msgid ""
 "Usage:\n"
 "\t"
 msgstr ""
 
-#: src/bin/calaos_home/main.cpp:43 src/bin/calaos_server/main.cpp:62
+#: src/bin/calaos_home/main.cpp:43 src/bin/calaos_server/main.cpp:65
 msgid " [options]"
 msgstr ""
 
-#: src/bin/calaos_home/main.cpp:44 src/bin/calaos_server/main.cpp:63
+#: src/bin/calaos_home/main.cpp:44 src/bin/calaos_server/main.cpp:66
 msgid "\tOptions:\n"
 msgstr ""
 
-#: src/bin/calaos_home/main.cpp:45 src/bin/calaos_server/main.cpp:64
+#: src/bin/calaos_home/main.cpp:45 src/bin/calaos_server/main.cpp:67
 msgid "\t-h, --help\tDisplay this help.\n"
 msgstr ""
 
-#: src/bin/calaos_home/main.cpp:46 src/bin/calaos_server/main.cpp:65
+#: src/bin/calaos_home/main.cpp:46 src/bin/calaos_server/main.cpp:68
 msgid "\t--config <path>\tSet <path> as the directory for config files.\n"
 msgstr ""
 
-#: src/bin/calaos_home/main.cpp:47 src/bin/calaos_server/main.cpp:66
+#: src/bin/calaos_home/main.cpp:47 src/bin/calaos_server/main.cpp:69
 msgid "\t--cache <path>\tSet <path> as the directory for cache files.\n"
 msgstr ""
 
@@ -90,7 +90,7 @@ msgid ""
 "options for touchscreen usage.\n"
 msgstr ""
 
-#: src/bin/calaos_home/main.cpp:50 src/bin/calaos_server/main.cpp:67
+#: src/bin/calaos_home/main.cpp:50 src/bin/calaos_server/main.cpp:70
 msgid "\t-v, --version\tDisplay current version and exit.\n"
 msgstr ""
 

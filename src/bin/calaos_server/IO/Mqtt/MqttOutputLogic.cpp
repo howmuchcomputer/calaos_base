@@ -22,7 +22,7 @@
 #include <MqttMap.h>
 #include <IOFactory.h>
 
-void _connect_received_output_logic_cb(void *data, EMqtt_Sn_Client *client, EMqtt_Sn_CONNECTION_STATE connection_state);
+void _connect_received_output_logic_cb(void *data, EMqtt_Sn_Client *client, EMQTT_SN_CONNECTION_STATE connection_state);
 
 using namespace Calaos;
 
@@ -58,21 +58,21 @@ bool MqttOutputLogic::set_value_real(bool val)
      {
 	  if (val == true)
 	  {
-	       emqtt_sn_client_send_publish(client, topic.c_str(), "ON", NULL, NULL);
+	       emqtt_sn_client_publish(client, topic.c_str(), "ON", NULL, NULL);
 	  }
 	  else
 	  {
-	       emqtt_sn_client_send_publish(client, topic.c_str(), "OFF", NULL, NULL);
+	       emqtt_sn_client_publish(client, topic.c_str(), "OFF", NULL, NULL);
 	  }
      }
      return true;
 }
 
-void _connect_received_output_logic_cb(void *data, EMqtt_Sn_Client *client, EMqtt_Sn_CONNECTION_STATE connection_state)
+void _connect_received_output_logic_cb(void *data, EMqtt_Sn_Client *client, EMQTT_SN_CONNECTION_STATE connection_state)
 {
      MqttOutputLogic *output = (MqttOutputLogic *)data;
 
-     if (connection_state == CONNECTION_ACCEPTED)
+     if (connection_state == EMQTT_SN_CONNECTION_ACCEPTED)
      {
 	  output->connected = true;
      }

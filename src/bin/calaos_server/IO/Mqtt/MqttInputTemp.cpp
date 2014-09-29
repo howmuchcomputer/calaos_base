@@ -23,7 +23,7 @@
 #include <IOFactory.h>
 
 void _topic_received_cb(void *data, EMqtt_Sn_Client *client, const char *topic, const char *value);
-void _connect_received_cb(void *data, EMqtt_Sn_Client *client, EMqtt_Sn_CONNECTION_STATE connection_state);
+void _connect_received_cb(void *data, EMqtt_Sn_Client *client, EMQTT_SN_CONNECTION_STATE connection_state);
 
 using namespace Calaos;
 
@@ -79,11 +79,11 @@ void _topic_received_cb(void *data, EMqtt_Sn_Client *client, const char *topic, 
      temp->setValue(val);
 }
 
-void _connect_received_cb(void *data, EMqtt_Sn_Client *client, EMqtt_Sn_CONNECTION_STATE connection_state)
+void _connect_received_cb(void *data, EMqtt_Sn_Client *client, EMQTT_SN_CONNECTION_STATE connection_state)
 {
      MqttInputTemp *temp = (MqttInputTemp *)data;
 
-     if(connection_state == CONNECTION_ACCEPTED)
+     if(connection_state == EMQTT_SN_CONNECTION_ACCEPTED)
      {
 	  temp->connected();
      }

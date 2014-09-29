@@ -109,11 +109,11 @@ calaos_server_SOURCES = \
         IO/InputTimer.h                                 \
         IO/IntValue.cpp                                 \
         IO/IntValue.h                                   \
-        IO/Mqtt/MqttMap.c                               \
+        IO/Mqtt/MqttMap.cpp                             \
         IO/Mqtt/MqttMap.h                               \
-        IO/Mqtt/MqttInputTemp.c                         \
+        IO/Mqtt/MqttInputTemp.cpp                       \
         IO/Mqtt/MqttInputTemp.h                         \
-        IO/Mqtt/MqttOutputLogic.c                       \
+        IO/Mqtt/MqttOutputLogic.cpp                     \
         IO/Mqtt/MqttOutputLogic.h                       \
         IO/OneWire/OWCtrl.cpp                           \
         IO/OneWire/OWCtrl.h                             \

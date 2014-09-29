@@ -24,7 +24,7 @@
 
 
 void _topic_received_input_logic_cb(void *data, EMqtt_Sn_Client *client, const char *topic, const char *value);
-void _connect_received_input_logic_cb(void *data, EMqtt_Sn_Client *client, EMqtt_Sn_CONNECTION_STATE connection_state);
+void _connect_received_input_logic_cb(void *data, EMqtt_Sn_Client *client, EMQTT_SN_CONNECTION_STATE connection_state);
 
 using namespace Calaos;
 
@@ -90,7 +90,7 @@ void _topic_received_input_logic_cb(void *data, EMqtt_Sn_Client *client, const c
      input->emitChange(value);
 }
 
-void _connect_received_input_logic_cb(void *data, EMqtt_Sn_Client *client, EMqtt_Sn_CONNECTION_STATE connection_state)
+void _connect_received_input_logic_cb(void *data, EMqtt_Sn_Client *client, EMqtt_Sn_Connection_State connection_state)
 {
      MqttInputLogic *input = (MqttInputLogic *)data;
 

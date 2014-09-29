@@ -59,7 +59,7 @@ EMqtt_Sn_Client* MqttMap::Instance(char* addr, int p, EMqtt_Sn_Client_Connect_Cb
     MqttMap *mqttmap = new MqttMap(addr, p);
 #ifdef HAVE_EMQTT
     mqttmap->client = emqtt_sn_client_add(addr, p, "Calaos");
-    emqtt_sn_client_connect_send(mqttmap->client, connected_cb, data, 10.0);
+    emqtt_sn_client_connect(mqttmap->client, connected_cb, data, 10.0);
 #endif
 
     mqttmaps.maps.push_back(mqttmap);
@@ -73,5 +73,3 @@ void MqttMap::stopAllMqttMaps()
     std::for_each(mqttmaps.maps.begin(), mqttmaps.maps.end(), Delete());
     mqttmaps.maps.clear();
 }
-
-
